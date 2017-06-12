@@ -1,0 +1,47 @@
+package example;
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		// Polymorphism guarantees that we can use a child class
+        // wherever a parent class is expected.
+		
+		Dinosaur dino1 = new Dinosaur();
+		Longneck dino2 = new Longneck();
+		
+		// The variable dinosaur of reference type Dinosaur is set to equal the variable dino2, which is an object instance of Longneck
+		Dinosaur dinosaur = dino2;
+		
+		// Since Dinosaur is the parent of Longneck, you cannot create a variable of reference type Longneck that equals to an object instance of Dinosaur
+		// Longneck dinosaur2 = dino1;
+		// Doesn't work
+		
+		// Parent classes cannot use subclass specific methods. Subclasses can call all methods in the parent class.
+		// Works, dinosaur is an instance of Longneck, but can use methods from parent class Dinosaur
+		dinosaur.dinoPoop();
+		
+		// The type of the reference determines what methods you can actually call using that variable.
+		// dino1.eatLaves();
+		// Won't work
+		
+		// The method a variable calls when Parent/Subclass share a method of the same name is determined by what the variable is an instance of
+		// e.g. dinosaur.dinoRoar() will call dinoRoar() from subclass Longneck, because dinosaur is an object instance of Longneck
+		dinosaur.dinoRoar();
+		
+		// Conversely dino1.dinoRoar() will call the version from the parent class Dinosaur, because dino1 is an instance of Dinosaur.
+		dino1.dinoRoar();
+		
+		// Polymorphism in action using a method that calls dinoRoar()
+		// The parent or subclass dinoRoar() method is called respective to the variable and what it is ultimately an instance of
+		dinoSleep(dinosaur);
+		dinoSleep(dino1);
+		
+	}
+	
+	public static void dinoSleep(Dinosaur dino) {
+		dino.dinoRoar();
+		System.out.println("Night falls and the dino, being tired, finds a safe location to rest.");
+	}
+
+}
