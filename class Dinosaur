@@ -1,0 +1,11 @@
+public class Dinosaur {
+	
+	public void dinoRoar() {
+		System.out.println("The dinosaur roars. Rawwwrr!");
+	}
+	
+	public void dinoPoop() {
+		System.out.println("After a long day of exercise, the dino relaxes and takes a big poop.");
+	}
+
+}
