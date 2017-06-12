@@ -1,0 +1,13 @@
+
+public class Longneck extends Dinosaur {
+
+	@Override
+	public void dinoRoar() {
+		System.out.println("The longneck tries to roar, but squeaks instead! He would rather eat some leaves.");
+	}
+	
+	public void eatLeaves() {
+		System.out.println("The longneck uses its long neck to eat his veggies.");
+	}
+	
+}
